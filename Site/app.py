@@ -6,8 +6,6 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pandas as pd
-import itertools
-import statsmodels.api as sm
 import numpy as np
 from fbprophet import Prophet
 from bs4 import BeautifulSoup
