@@ -84,6 +84,7 @@ def getDataAtURL(select_ano, select_mun, select_dp, select_crime):
 
     # loop para obter as estatisticas de cada ano
     while start <= end:
+        print(start)
         # faz requisicao a pagina
         if dp != 0:
             r = session.post(url, data=params_delegacia,
