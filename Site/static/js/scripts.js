@@ -37,7 +37,7 @@ $(function(){
         for (i = 0; i < municipio.length; i++){
             var opt = document.createElement('option');
             opt.text = municipio[i][1];
-            opt.value = municipio[i][0];
+            opt.value = municipio[i][1];
             newSel.add(opt, null);
         }
     });
@@ -47,7 +47,14 @@ $(function(){
         while (newSel.options.length > 0){
             newSel.remove(newSel.options.length - 1);
         }
-        if(delegacia[this.value-1].length > 0){
+        
+        var e = document.getElementById("Municipios");
+        var j = 1;
+        while(e.value != municipio[j-1][1]){
+            j++;
+        }
+
+        if(delegacia[j-1].length > 0){
             var opt = document.createElement('option');
             opt.text = "";
             opt.value = "";
@@ -55,14 +62,14 @@ $(function(){
 
             opt = document.createElement('option');
             opt.text = "Todos";
-            opt.value = "0";
+            opt.value = "Todos";
             newSel.add(opt, null);
         }
 
-        for (i = 0; i < delegacia[this.value-1].length; i++){
+        for (i = 0; i < delegacia[j-1].length; i++){
             var opt = document.createElement('option');
-            opt.text = delegacia[this.value-1][i][1];
-            opt.value = delegacia[this.value-1][i][0];
+            opt.text = delegacia[j-1][i][1];
+            opt.value = delegacia[j-1][i][1];
             newSel.add(opt, null);
         }
     });
@@ -81,7 +88,7 @@ $(function(){
             for (i = 0; i < crime.length; i++){
                 var opt = document.createElement('option');
                 opt.text = crime[i][0];
-                opt.value = crime[i][1];
+                opt.value = crime[i][0];
                 newSel.add(opt, null);
             }
         }    
